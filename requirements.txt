@@ -1,0 +1,10 @@
+# Core Dependencies
+pandas>=2.0.0
+numpy>=1.24.0
+yfinance>=0.2.0
+pandas-datareader>=0.10.0
+streamlit>=1.28.0
+plotly>=5.17.0
+
+# Development Dependencies (optional - install with: pip install -r requirements.txt -r requirements-dev.txt)
+# Or use: pip install -e ".[dev]" for development mode
