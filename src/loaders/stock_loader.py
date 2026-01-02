@@ -5,11 +5,15 @@ Fetches historical stock price data using yfinance.
 Provides OHLCV (Open, High, Low, Close, Volume) data for specified tickers.
 """
 
+import logging
 from datetime import datetime
 from typing import Dict, List, Optional, Union
 
 import pandas as pd
 import yfinance as yf
+
+# Configure module logger
+logger = logging.getLogger(__name__)
 
 
 class StockDataLoader:
@@ -62,9 +66,9 @@ class StockDataLoader:
                 if not df.empty:
                     data[ticker] = df
                 else:
-                    print(f"Warning: No data retrieved for {ticker}")
+                    logger.warning(f"No data retrieved for {ticker}")
             except Exception as e:
-                print(f"Error fetching data for {ticker}: {str(e)}")
+                logger.error(f"Error fetching data for {ticker}: {str(e)}")
                 
         if not data:
             raise ValueError("Failed to retrieve data for any ticker")
