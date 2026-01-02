@@ -61,6 +61,14 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+# Meridian Project - Local Data Storage
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/*.csv
+data/*.json
+!data/.gitkeep
+
 # Flask stuff:
 instance/
 .webassets-cache
